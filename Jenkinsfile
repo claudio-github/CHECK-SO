@@ -38,6 +38,7 @@ pipeline {
         }
 
         stage('Stage do Windows'){
+            when { expression { getOs() == 'terraform-windows' } }
             steps{
                 script{
                     echo "Stage do Windows"
@@ -46,6 +47,7 @@ pipeline {
         }
         
         stage('Stage do Linux'){
+             when { expression { getOs() == 'terraform-linux' } }
             steps{
                 script{
                     echo "Stage do Linux"
