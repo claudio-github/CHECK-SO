@@ -6,7 +6,6 @@ def getSo(){
     }
 }
 
-def resultado = { cmd -> sh (script: 'echo "Teste com sh"', returnStdout: true).trim()}
 
 pipeline {
 
@@ -30,22 +29,29 @@ pipeline {
             }
         }
 
-        stage('Teste script'){
+        stage('Primeiro Stage'){
             steps{
-                //script{
-                    echo resultado
-                //}
+                script{
+                    echo "Iniciando a Pipeline"
+                }
             }
         }
 
-        stage('Terraform init'){
+        stage('Stage do Windows'){
             steps{
                 script{
-                    
+                    echo "Stage do Windows"
                 }
             }
         }
         
+        stage('Stage do Linux'){
+            steps{
+                script{
+                    echo "Stage do Linux"
+                }
+            }
+        }
     }
 
 
