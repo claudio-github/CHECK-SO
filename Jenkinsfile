@@ -38,7 +38,7 @@ pipeline {
             }
         }
 
-        stage('Terraform Version'){
+        stage('Terraform init'){
             steps{
                 script{
                     resultado
