@@ -32,7 +32,7 @@ pipeline {
         stage('Terraform Version'){
             steps{
                 script{
-                'terraform version'
+                `terraform version`
                 }
             }
         }
