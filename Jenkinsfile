@@ -32,9 +32,9 @@ pipeline {
 
         stage('Teste script'){
             steps{
-                script{
+                //script{
                     echo resultado
-                }
+                //}
             }
         }
 
