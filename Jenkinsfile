@@ -33,7 +33,7 @@ pipeline {
             steps{
                 script{
                 x="echo 'terraform version' | sh"
-                echo $x
+                echo $(eval "$x")
                 }
             }
         }
