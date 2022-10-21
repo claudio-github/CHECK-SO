@@ -32,7 +32,8 @@ pipeline {
         stage('Terraform Version'){
             steps{
                 script{
-                `terraform version`
+                terraform_version=`terraform version`
+                echo $terraform_version
                 }
             }
         }
