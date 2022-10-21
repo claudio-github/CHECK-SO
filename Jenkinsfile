@@ -6,6 +6,7 @@ def getSo(){
     }
 }
 
+def resultado = { cmd -> sh (script: cmd, returnStdout: true).trim()}
 
 pipeline {
 
@@ -32,11 +33,19 @@ pipeline {
         stage('Terraform Version'){
             steps{
                 script{
-                x="echo 'terraform version' | sh"
-                echo $(eval "$x")
+                    
                 }
             }
         }
+
+        stage('Terraform Version'){
+            steps{
+                script{
+                    resultado
+                }
+            }
+        }
+        
     }
 
 
