@@ -1,8 +1,8 @@
 def getSo(){
     if(isUnix()){
-        return "Linux SO"
+        return "terraform-linux"
     }else {
-            return "Windows SO"
+            return "terraform-windows"
     }
 }
 
@@ -12,7 +12,7 @@ pipeline {
     agent any
 
     tools {
-        "org.jenkinsci.plugins.terraform.TerraformInstallation" "terraform-linux"
+        "org.jenkinsci.plugins.terraform.TerraformInstallation" getSo()
     }
 
     environment {
