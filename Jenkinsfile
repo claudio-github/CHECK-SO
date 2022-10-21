@@ -6,7 +6,7 @@ def getSo(){
     }
 }
 
-def resultado = { cmd -> sh (script: cmd, returnStdout: true).trim()}
+def resultado = { cmd -> sh (script: 'echo "Teste com sh"', returnStdout: true).trim()}
 
 pipeline {
 
@@ -30,10 +30,10 @@ pipeline {
             }
         }
 
-        stage('Terraform Version'){
+        stage('Teste script'){
             steps{
                 script{
-                    
+                    echo resultado
                 }
             }
         }
@@ -41,7 +41,7 @@ pipeline {
         stage('Terraform init'){
             steps{
                 script{
-                    resultado
+                    
                 }
             }
         }
