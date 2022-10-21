@@ -16,7 +16,7 @@ pipeline {
     }
 
     environment {
-        TF_HOME = tool('terraform-linux')
+        TF_HOME = tool(getSo())
         TF_IN_AUTOMATION = "true"
         PATH = "$TF_HOME:$PATH"
     }
